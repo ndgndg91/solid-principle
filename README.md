@@ -12,11 +12,7 @@
 - 확장은 상속(Inheritance) 를 통해서 한다.
 
 <h1>3. Liskov Substitution Principle - 리스코프 치환 원칙</h1>
-- 만약 A Class 가 class B 의 Subtype 이면, B를 A로 대체할 수 있어야한다.
-<pre>
-List<Integer> list = new ArrayList<>();
-ArrayList<Integer> list = new ArrayList<>();
-</pre>
+- 만약 A Class 가 class B 의 Subtype 이면 (extends), B를 A로 대체할 수 있어야한다.
 
 <h1>4. Interface Segregation Principle</h1>
 - 큰 Interface ( 추상 메서드 수가 많은 ) 는 작은 인터페이스 ( 추상 메서드 수가 적은 ) Interface 로 분리되어야 한다. <br> 
