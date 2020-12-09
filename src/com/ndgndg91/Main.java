@@ -1,5 +1,10 @@
 package com.ndgndg91;
 
+import com.ndgndg91.liskovsubstitution.DarkTemplar;
+import com.ndgndg91.liskovsubstitution.Drone;
+import com.ndgndg91.liskovsubstitution.MineralCollector;
+import com.ndgndg91.liskovsubstitution.SCV;
+import com.ndgndg91.liskovsubstitution.StarCraftUnit;
 import com.ndgndg91.openforextensioncloseformodification.BackendDeveloper;
 import com.ndgndg91.openforextensioncloseformodification.FullStackDeveloper;
 import com.ndgndg91.singleresponsibility.CustomerServiceRepresentative;
@@ -15,6 +20,8 @@ public class Main {
         srp();
 
         ocp();
+
+        lsp();
     }
 
     private static void srp(){
@@ -44,6 +51,18 @@ public class Main {
     }
 
     private static void lsp(){
+        // drone, scv is a subtype of MineralCollector.
+        // drone, scv can substitute mineral collector. (프로브1)
+        Drone drone = new Drone("드론1");
+        SCV scv = new SCV("scv1");
+        MineralCollector probe = new MineralCollector("프로브1");
+        probe.collectMineral();
+        drone.collectMineral();
+        scv.collectMineral();
 
+        // dark templar is not a subtype of mineral collector.
+        // dark templar can't substitute mineral collector.
+        StarCraftUnit darkTemplar = new DarkTemplar("닥템1");
+        darkTemplar.attack(); // dark templar only can attack. can't collect mineral.
     }
 }
