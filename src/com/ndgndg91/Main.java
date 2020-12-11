@@ -1,5 +1,6 @@
 package com.ndgndg91;
 
+import com.ndgndg91.dependencyinversion.DipDriver;
 import com.ndgndg91.interfacesegregation.IspDriver;
 import com.ndgndg91.liskovsubstitution.LspDriver;
 import com.ndgndg91.openforextensioncloseformodification.OcpDriver;
@@ -16,5 +17,7 @@ public class Main {
         LspDriver.lsp();
 
         IspDriver.isp();
+
+        DipDriver.dip();
     }
 }
